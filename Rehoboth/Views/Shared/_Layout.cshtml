@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="~/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/owl.theme.default.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style_II.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/responsive2.css" />
+    <!-- favicon links -->
+    <link rel="shortcut icon" type="image/png" href="~/img/favicon.ico" />
+    @RenderSection("metatags", required: false)
+</head>
+<body>
+    <!-- preloader Start -->
+    <div id="preloader">
+        <div id="status">
+            <img src="~/images/header/loadinganimation.gif" id="preloader_image" alt="loader">
+        </div>
+    </div>
+    <!-- Top Scroll End -->
+  
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <partial name="_FooterPartial" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--main js file start-->
+    <script src="~/js/jquery_min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/jquery.menu-aim.js"></script>
+    <script src="~/js/jquery.countTo.js"></script>
+    <script src="~/js/jquery.inview.min.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="~/js/modernizr.js"></script>
+    <script src="~/js/custom_II.js"></script>
+    <!--main js file end-->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
