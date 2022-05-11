@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,5 +12,7 @@ namespace Rehoboth.Models
         public List<EmailAddress> FromAddresses { get; set; } = new List<EmailAddress>();
         public string Subject { get; set; }
         public string Content { get; set; }
-    }
+        public IFormFile Attachment { get; set; }
+        public IFormFile Photo { get; set; }
+}
 }

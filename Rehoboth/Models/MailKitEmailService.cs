@@ -20,7 +20,7 @@ namespace Rehoboth.Models
             var message = new MimeMessage();
             message.To.AddRange(msg.ToAddresses.Select(x => new MailboxAddress(x.Name, x.Address)));
             message.From.AddRange(msg.FromAddresses.Select(x => new MailboxAddress(x.Name, x.Address)));
-
+            msg.Photo = (Microsoft.AspNetCore.Http.IFormFile)message.Attachments;
             message.Subject = msg.Subject;
 
             message.Body = new TextPart("plain")

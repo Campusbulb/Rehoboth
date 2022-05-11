@@ -5,7 +5,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="jp_top_header_left_wrapper">
                     <div class="jp_top_header_left_cont">
-                        <p><i class="fa fa-phone"></i> &nbsp;Phone &nbsp;+004 2085381895</p>
+                        <p><i class="fa fa-phone"></i> &nbsp;Phone &nbsp;+00442085381895</p>
                         <p class=""><i class="fa fa-envelope"></i> &nbsp;Email :&nbsp;<a href="#">Info@rehobothrecruits.com</a></p>
                     </div>
                 </div>
@@ -77,18 +77,23 @@
                                     </ul>
                                 </li>
                                 <li class="parent gc_main_navigation">
+                                    <a asp-action="Service" asp-controller="Home" class="gc_main_navigation">Service &nbsp;</a>
+                                    <!-- sub menu start -->
+                                    <!-- sub menu end -->
+                                </li>
+                                <li class="parent gc_main_navigation">
                                     <a asp-action="About" asp-controller="Home" class="gc_main_navigation">About Us &nbsp;</a>
                                     <!-- sub menu start -->
                                     <!-- sub menu end -->
                                 </li>
                                 <!--<li class="has-mega gc_main_navigation">
-                                    <a asp-action="Service" asp-controller="Home" class="gc_main_navigation"> Services&nbsp;<i class="fa fa-angle-down"></i></a>-->
-                                    <!-- mega menu start -->
-                                    <!--<ul>
-                                        <li class="parent"><a asp-action="Nuser_service" asp-controller="Home">Employer-Us-Nurses</a></li>
-                                        <li class="parent"><a asp-action="Employer_service" asp-controller="Home">Nurses-Us-Employer</a></li>
-                                    </ul>
-                                </li>-->
+        <a asp-action="Service" asp-controller="Home" class="gc_main_navigation"> Services&nbsp;<i class="fa fa-angle-down"></i></a>-->
+                                <!-- mega menu start -->
+                                <!--<ul>
+            <li class="parent"><a asp-action="Nuser_service" asp-controller="Home">Employer-Us-Nurses</a></li>
+            <li class="parent"><a asp-action="Employer_service" asp-controller="Home">Nurses-Us-Employer</a></li>
+        </ul>
+    </li>-->
                                 <li class="gc_main_navigation parent"><a asp-action="Contact" asp-controller="Home" class="gc_main_navigation">Contact</a></li>
                             </ul>
                         </div>
@@ -128,6 +133,10 @@
                                                     </li>
                                                     <!-- .has-children -->
                                                     <li class="">
+                                                        <a asp-action="Service" asp-controller="Home">Services</a>
+                                                        <!-- .cd-secondary-dropdown -->
+                                                    </li>
+                                                    <li class="">
                                                         <a asp-action="About" asp-controller="Home">About Us</a>
                                                         <!-- .cd-secondary-dropdown -->
                                                     </li>
@@ -136,14 +145,14 @@
                                                     </li>
 
                                                     @*<li>
-                                                        <a href="contact.html">Contact</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="register.html">Sign Up</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="login.html">Login</a>
-                                                    </li>*@
+            <a href="contact.html">Contact</a>
+        </li>
+        <li>
+            <a href="register.html">Sign Up</a>
+        </li>
+        <li>
+            <a href="login.html">Login</a>
+        </li>*@
 
                                                 </ul>
                                                 <!-- .cd-dropdown-content -->

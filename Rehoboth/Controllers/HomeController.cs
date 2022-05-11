@@ -65,12 +65,14 @@ namespace Rehoboth.Controllers
                 };
 
                 EmailService.Send(msgToSend);
-                return RedirectToAction("Index");
+                ViewBag.Message = "Email sent.";
+                //return RedirectToAction("Index");
             }
             else
             {
                 return Index();
             }
+            return View("Index");
         }
       
 
@@ -84,6 +86,11 @@ namespace Rehoboth.Controllers
         }
 
         public IActionResult Registercompany()
+        {
+            return View();
+        }
+
+        public IActionResult Service()
         {
             return View();
         }
