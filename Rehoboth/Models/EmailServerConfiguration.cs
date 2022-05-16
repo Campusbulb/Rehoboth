@@ -7,7 +7,7 @@ namespace Rehoboth.Models
 {
     public class EmailServerConfiguration
     {
-        public EmailServerConfiguration(int _smtpPort = 465)
+        public EmailServerConfiguration(int _smtpPort = 587)
         {
             SmtpPort = _smtpPort;
         }

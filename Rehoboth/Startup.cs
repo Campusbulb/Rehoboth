@@ -26,14 +26,14 @@ namespace Rehoboth
         {
             EmailServerConfiguration config = new EmailServerConfiguration
             {
-                SmtpPassword = ".John200189",
-                SmtpServer = "smtp.gmail.com",
-                SmtpUsername = "Oguzierem.bethel@gmail.com"
+                SmtpPassword = "@Both123",
+                SmtpServer = "lim202.truehost.cloud",
+                SmtpUsername = "Contact@rehobothrecruits.com"
             };
 
             EmailAddress FromEmailAddress = new EmailAddress
             {
-                Address = "Oguzierem.bethel@gmail.com",
+                Address = "Contact@rehobothrecruits.com",
                 Name = "Contact"
             };
 
