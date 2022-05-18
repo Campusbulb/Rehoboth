@@ -1,14 +1,11 @@
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Rehoboth.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Rehoboth
 {
@@ -24,24 +21,9 @@ namespace Rehoboth
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            EmailServerConfiguration config = new EmailServerConfiguration
-            {
-                SmtpPassword = "@Both123",
-                SmtpServer = "lim202.truehost.cloud",
-                SmtpUsername = "Contact@rehobothrecruits.com"
-            };
-
-            EmailAddress FromEmailAddress = new EmailAddress
-            {
-                Address = "Contact@rehobothrecruits.com",
-                Name = "Contact"
-            };
-
-            services.AddSingleton<EmailServerConfiguration>(config);
-            services.AddTransient<IEmailService, MailKitEmailService>();
-            services.AddSingleton<EmailAddress>(FromEmailAddress);
-            services.AddMvc();
+            services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
             services.AddControllersWithViews();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +39,7 @@ namespace Rehoboth
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseNotyf();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

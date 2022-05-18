@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 
 namespace Rehoboth.Models
 {
-    public class RegisterCompanyModel
+    public class Contact
     {
         [Required]
-        public string CompanyName { get; set; }
+        public string Name { get; set; }
 
         [Required]
         public string Email { get; set; }
+
+        [Phone]
+        public string Phone { get; set; }
+
+        
         [Required]
-        public string PhoneNumber { get; set; }
-        [Required]
-        public string City { get; set; }
-        [Required]
-        public string Country { get; set; }
         public string Subject { get; set; }
-        public string Website { get; set; }
+
+        [Required]
+        public string Content { get; set; }
+
+        [Required]
+        public string Service { get; set; }
     }
 }

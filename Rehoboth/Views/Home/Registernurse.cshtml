@@ -1,4 +1,5 @@
-﻿<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+﻿@model Register 
+<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
     <div class="jp_slider_form_main_wrapper" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">
         <div class="jp_main_slider_heading_wrapper">
             <h2>Register As A Nurse!</h2>
@@ -6,72 +7,73 @@
         <div class="jp_regiter_top_heading">
             <p>Fields with * are mandetory </p>
         </div>
+        <h3>@ViewBag.Message</h3>
         <div class="row">
-            <form asp-action="RegisterNurse" method="post" enctype="multipart/form-data" asp-controller="Home" data-toggle="validator">
+            <form asp-action="RegisterNur" method="post" enctype="multipart/form-data" asp-controller="Home" data-toggle="validator">
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">First Name</label>
-                    <input type="text" name="field-name" value="" placeholder="First Name"
+                    <input type="text"  asp-for="FirstName"  placeholder="First Name"
                            required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Father Name</label>
-                    <input type="text" name="field-name" value=""
+                    <input asp-for="LastName" type="text" 
                            placeholder="Father's Name*" required>
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                    <label for="">Other Names</label>
+                    <input type="text" asp-for="Othername"  placeholder="First Name"
+                           required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Email</label>
-                    <input type="email" name="field-name" value="" placeholder="Email*"
+                    <input asp-for="Email" type="email"  placeholder="Email*"
                            required>
                 </div>
                 <!--Form Group-->
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Qualification</label>
-                    <input type="text" name="field-name" value=""
+                    <input asp-for="Qualification" type="text" 
                            placeholder="Qualification" required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Years of Experience</label>
-                    <input type="text" name="field-name" value=""
+                    <input asp-for="YearOfExperience" type="text"
                            placeholder="Years of Experience*" required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Last Work</label>
-                    <input type="text" name="field-name" value=""
+                    <input asp-for="LastWork" type="text" 
                            placeholder="When Last work" required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Phone Number"
-                           pattern="[7-9]{1}[0-9]{9}" required>
+                    <input asp-for="PhoneNumber" type="tel"  placeholder="Phone Number"
+                           required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Location</label>
-                    <input type="text" name="field-name" value=""
+                    <input asp-for="CurrentLocation" type="text" 
                            placeholder="current location">
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">City</label>
-                    <input type="text" name="field-name" value="" placeholder="City"
+                    <input asp-for="City" type="text"  placeholder="City"
                            required>
-                </div>
-                <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                    <label for="">Zip Code</label>
-                    <input type="text" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$"
-                           placeholder="Zip Code" required>
                 </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Country</label>
-                    <select class="form-select" id="validationDefault04" required>
+                    <select asp-for="Country" class="form-select" id="validationDefault04" required>
                         <option value="">Select Country</option>
                         <option value="Afganistan">Afghanistan</option>
                         <option value="Albania">Albania</option>
@@ -322,31 +324,24 @@
                     </select>
                 </div>
                 <!--Form Group-->
-                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                @*<div class="form-group col-md-6 col-sm-6 col-xs-12">
                     <label for="">Portfolio Link</label>
-                    <input type="url" name="field-name" value=""
+                    <input asp-for="PortfolioLink" type="url" name="field-name" value=""
                            placeholder="portfolio link(Linkdin etc)">
-                </div>
+                </div>*@
                 <!--Form Group-->
-                <div class="form-group col-md-6 col-sm-6 col-xs-12 custom_input" required>
-                    <label for="cv">Image</label>
-                    <input type='file' onchange="readURL(this);" />
-                    <div class="img-upload">
-                        <img id="blah" src="~/images/content/base.png" alt="your image" />
-                    </div>
-                </div>
                 <!--Form Group-->
                 <div class="form-group col-md-6 col-sm-6 col-xs-12 custom_input" required>
                     <label for="cv">Upload CV</label>
-                    <input type="file" name="resume">
+                    <input type="file" name="attachments" multiple="multiple">
                 </div>
-                <div class="form-group col-md-6 col-sm-6 col-xs-12 custom_input" required>
-                    <label for="cv">Upload IELTS/OET certificate</label>
-                    <input type="file" name="resume">
-                </div>
+                @*<div class="form-group col-md-6 col-sm-6 col-xs-12 custom_input" required>
+                <label for="cv">Upload IELTS/OET certificate</label>
+                <input type="file" name="resume">
+            </div>*@
                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="check-box text-center">
-                        <input type="checkbox" name="shipping-option" id="account-option_1">
+                        <input type="checkbox" name="shipping-option" id="account-option_1" required>
                         &ensp;
                         <label for="account-option_1">
                             I agreed to the <a href="#"
@@ -359,7 +354,7 @@
                 <div class="login_btn_wrapper register_btn_wrapper login_wrapper ">
                     <button type="submit"
                             class="btn btn-primary login_btn">
-                        register
+                        Register
                     </button>
                     <!-- <a type="submit" href="javascript:;" class="btn btn-primary login_btn"> register </a> -->
                 </div>
