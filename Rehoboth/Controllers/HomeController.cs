@@ -97,7 +97,8 @@ namespace Rehoboth.Controllers
 				+ "</br>Company Name: " + contact.CompanyName
 				+ "<br>Email: " + contact.Email + "<br>Phone Number: " + contact.PhoneNumber + "<br>City: " + contact.City
 				+ "<br>Country: " + contact.Country + "<br>Website: " + contact.Website + "<br>";
-			MailRequest email = new() { ToEmail = contact.Email, Subject = contact.Subject, Body = body };
+
+			MailRequest email = new() { ToEmail = "contact@rehobothrecruits.com", Subject = "request to register as Employer from Rehoboth website", Body = body };
 
 			try
 			{
@@ -135,7 +136,7 @@ namespace Rehoboth.Controllers
 				}
 			}
 
-			MailRequest email = new() { ToEmail = contact.Email, Subject = contact.Subject, Body = body };
+			MailRequest email = new() { ToEmail = "contact@rehobothrecruits.com", Subject = "Nurse seeking Job", Body = body };
 
 			try
 			{
@@ -172,7 +173,7 @@ namespace Rehoboth.Controllers
 					fileNames.Add(path);
 				}
 			}
-			MailRequest email = new() { ToEmail = contact.Email, Subject = contact.Subject, Body = body };
+			MailRequest email = new() { ToEmail = "contact@rehobothrecruits.com", Subject = contact.Subject, Body = body };
 
 			try
 			{
@@ -210,7 +211,7 @@ namespace Rehoboth.Controllers
 					fileNames.Add(path);
 				}
 			}
-			MailRequest email = new() { ToEmail = contact.Email, Subject = contact.Subject, Body = body };
+			MailRequest email = new() { ToEmail = "contact@rehobothrecruits.com", Subject = contact.Subject, Body = body };
 
 			try
 			{
